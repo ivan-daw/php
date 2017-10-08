@@ -15,7 +15,7 @@ and open the template in the editor.
         <?php
         foreach ($_REQUEST as $key => $val) {
             
-            ?> <h1 style="color:<?php $key ?>"> 
+            ?> <h1 style="color:<?php echo $key ?>"> 
                 <?php
                 echo htmlspecialchars($key . "=" . $val);
 
