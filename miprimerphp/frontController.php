@@ -7,46 +7,37 @@ require_once 'config\Config.php';
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-//require_once "src\controller\Nivel1.php";
-//require_once "src\controller\Nivel2.php";
-//require_once "src\controller\Nivel3.php";
+ $urlForward = Constantes::VISTA_ERROR;
 
 if (!empty($_REQUEST['url'])){
 $url = $_REQUEST['url'];
 
+//no importa como se escriba la url(mayusc/minusc), se pasa a minusculas para que coincida con el swith
        switch (strtolower($url)) {
 
+            //repetido el controller -> index() por evitar fallo en caso de default (no tiene clase) la otra solucion serian ifs anidados pero se volveria mas sucio el codigo o hacer un controller para errores
+           
                         case 'nivel1':
                             $controller = new Nivel1();
+                            $controller->index();
                             break;
                         case 'nivel2':
                             $controller = new Nivel2();
+                            $controller->index();
                             break;
                         case 'nivel3':
                             $controller = new Nivel3();
+                            $controller->index();
                             break;
                         default:
-                            echo 'url invalida';
+                            require_once Constantes::VISTA_ERROR;
                             break;
+                        
+                             
        }
        
-     //  if (!empty($_SESSION['nivel'])){
        if (!empty($_SESSION['nivel']) && $_SESSION['nivel']==1111) {
-           echo 'LA CAJA ESTA ABIERTA';
+           require_once Constantes::VISTA_CAJA;
        }
-       $controller->index();
-}
-  
-//
-//if ($clase == "nivel1")
-//{
-//$controller = new Nivel1();
-//}
-//else
-//{
-//   $controller = new Nivel2(); 
-//}
-//
 
-//call_user_func( array( $controller, "Index" ) );
+}

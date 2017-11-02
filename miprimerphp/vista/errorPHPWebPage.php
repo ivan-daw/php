@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
+        <h1 style="color:green">Caja fuerte: </h1>
+        <h3 style="color:red">Ha ocurrido un error, tendras que empezar desde el nivel1 </h3>
+
         <?php
-        echo  $error;
-          session_destroy();
-        //echo $_SESSION['nivel'];
-        
+        session_destroy();
         ?>
+
     </body>
 </html>
