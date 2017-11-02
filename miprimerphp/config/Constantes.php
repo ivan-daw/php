@@ -13,7 +13,14 @@
  */
 class Constantes {
     //put your code here
-    public static $var = "kk";
+    //public static $var = "kk";
+    const PWD = 'abc';
+     const PWD2_1 = 11;
+     const PWD2_2 = 22;
+     const PWD2_3 = 33;
+     const PWD3 = '12ab';
+    const VISTA_INDEX = 'vista\vistaPHPWebPage.php';
+    const VISTA_ERROR = 'vista\errorPHPWebPage.php';
     
-    const DATOS = "hola";
+    //const DATOS = "hola";
 }

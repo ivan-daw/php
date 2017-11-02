@@ -1,4 +1,5 @@
 <?php
+
 require_once 'config\Config.php';
 
 /* 
@@ -7,19 +8,45 @@ require_once 'config\Config.php';
  * and open the template in the editor.
  */
 
-require_once "controller/ClassSession.php";
+//require_once "src\controller\Nivel1.php";
+//require_once "src\controller\Nivel2.php";
+//require_once "src\controller\Nivel3.php";
 
-$clase = $_REQUEST["clase"];
+if (!empty($_REQUEST['url'])){
+$url = $_REQUEST['url'];
 
-if ($clase == "nivel1")
-{
-$controller = new ClassSession();
+       switch (strtolower($url)) {
+
+                        case 'nivel1':
+                            $controller = new Nivel1();
+                            break;
+                        case 'nivel2':
+                            $controller = new Nivel2();
+                            break;
+                        case 'nivel3':
+                            $controller = new Nivel3();
+                            break;
+                        default:
+                            echo 'url invalida';
+                            break;
+       }
+       
+     //  if (!empty($_SESSION['nivel'])){
+       if (!empty($_SESSION['nivel']) && $_SESSION['nivel']==1111) {
+           echo 'LA CAJA ESTA ABIERTA';
+       }
+       $controller->index();
 }
-else
-{
-   $controller = new ClassSession2(); 
-}
-
+  
+//
+//if ($clase == "nivel1")
+//{
+//$controller = new Nivel1();
+//}
+//else
+//{
+//   $controller = new Nivel2(); 
+//}
+//
 
 //call_user_func( array( $controller, "Index" ) );
-$controller->index();

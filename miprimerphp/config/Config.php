@@ -1,5 +1,6 @@
 <?php
 require_once ('Constantes.php');
+require 'vendor/autoload.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -8,8 +9,8 @@ require_once ('Constantes.php');
 
 session_start();
 
-$variable = "MMM";
-define('CACA',"el php STINKS");
+//$variable = "MMM";
+//define('CACA',"el php STINKS");
 /**
  * Description of config
  *
@@ -17,8 +18,5 @@ define('CACA',"el php STINKS");
  */
 class Config {
     //put your code here
-     
-    const CACA = "el php STINKS";
-    
-    
+
 }

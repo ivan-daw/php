@@ -10,10 +10,10 @@ and open the template in the editor.
         <title></title>
     </head>
     <body>
-        
-        ERROR
         <?php
-        echo $this->error;
+        echo  $error;
+          session_destroy();
+        //echo $_SESSION['nivel'];
         
         ?>
     </body>
